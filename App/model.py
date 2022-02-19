@@ -220,8 +220,7 @@ def comparetagnames(name, tag):
 # funciones para comparar elementos dentro de algoritmos de ordenamientos
 
 def compareratings(book1, book2):
-    # TODO modificar operador de comparacion lab 4
-    return (float(book1['average_rating']) > float(book2['average_rating']))
+    return (float(book1['average_rating'])  < float(book2['average_rating']))
 
 
 # Funciones de ordenamiento
@@ -230,10 +229,10 @@ def sortBooks(catalog, size):
     # TODO completar los cambios del return en el sort para el lab 4
     sub_list = lt.subList(catalog['books'], 1, size)
     start_time = getTime()
-    sa.sort(sub_list, compareratings)
+    sorted_list = sa.sort(sub_list, compareratings)
     end_time = getTime()
     delta_time = deltaTime(start_time, end_time)
-    return delta_time
+    return sorted_list, delta_time
 
 
 # Funciones para medir tiempos de ejecucion
